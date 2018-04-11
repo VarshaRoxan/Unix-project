@@ -1,1 +1,15 @@
+echo “Welcome”
+echo “Please choose the account named after your assigned batch from the following:”
+accOption=0
+echo “1) Admin\n 2) Batch 1\n 3) Batch 2\n 4) Batch 3\n”
+read accOption
+if((accOption==1))
+thens
+echo “Enter the user name”
+read 
+
+actionOption=0
+echo “Welcome\n As you are the admit, you can access the computer system without any restriction.\n”
+echo “What would you like to do?\n 1)
+
 
