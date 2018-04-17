@@ -1,15 +1,45 @@
 echo “Welcome”
-echo “Please choose the account named after your assigned batch from the following:”
-accOption=0
-echo “1) Admin\n 2) Batch 1\n 3) Batch 2\n 4) Batch 3\n”
+echo “Please choose an account from the following:”
+echo “1) Admin\n 2) Student\n”
 read accOption
+
 if((accOption==1))
-thens
-echo “Enter the user name”
-read 
-
-actionOption=0
-echo “Welcome\n As you are the admit, you can access the computer system without any restriction.\n”
-echo “What would you like to do?\n 1)
-
+then
+   adusername=
+   adpassword=
+   echo “Enter the user name”
+   read eadusername 
+   echo "Enter password"
+   read eadpassword
+    if((eadusername==adusername && eadpassword==adpassword))
+    then
+      echo “Welcome...!!!\n As you are the admin, you can access the computer system without any restriction.\n”
+      echo “What would you like to do?\n 1)Reset user name or password of any account\n 2)Set or reset schedule for student\n"
+      read actOption
+      if((actOption==1))
+      then
+        echo "Want to change login details of: 1)Admin\n 2)Student\n"
+        read changeOption
+        if((changeOption==1))
+        then
+          echo "Enter the new user name"
+          read adusername
+          echo "Enter the new password"
+          read adpassword
+        elif((actOption==2))
+        then
+          echo "Enter the new user name"
+          read stusername
+          echo "Enter the new password"
+          read stpassword
+        else
+          echo "Invalid option entry\n"
+        fi
+      elif((actOption==2))
+      then
+        echo "Enter the time the students have to login in '01.30' format"
+        read setTime
+       
+        
+        
 
