@@ -3,7 +3,7 @@ echo “Please choose an account from the following:\n”
 echo “1) Admin\n 2) Student\n”
 read accOption
 
-if((accOption==1))
+if((${accOption}==1))
 then
    echo "If you have never set any password before, then enter '0123' as both username and password\n"
    adusername=0123
@@ -12,22 +12,22 @@ then
    read eadusername 
    echo "Enter password\n"
    read eadpassword
-    if((eadusername==adusername && eadpassword==adpassword))
+    if((${eadusername}==${adusername} && ${eadpassword}==${adpassword}))
     then
       echo “Welcome...!!!\n As you are the admin, you can access the computer system without any restrictions.\n”
       echo “What would you like to do?\n 1)Reset user name or password of any account\n 2)Set or reset schedule for student\n"
       read actOption
-      if((actOption==1))
+      if((${actOption}==1))
       then
         echo "Want to change login details of: 1)Admin\n 2)Student\n"
         read changeOption
-        if((changeOption==1))
+        if((${changeOption}==1))
         then
           echo "Enter the new user name\n"
           read adusername
           echo "Enter the new password\n"
           read adpassword
-        elif((actOption==2))
+        elif((${actOption}==2))
         then
           echo "Enter the new user name\n"
           read stusername
@@ -36,7 +36,7 @@ then
         else
           echo "Invalid option entry\n"
         fi
-      elif((actOption==2))
+      elif((${actOption}==2))
       then
         echo "Enter the time the students have to login in '01:30:00' format\n"
         read TIME1
@@ -45,13 +45,13 @@ then
        fi
        echo "Thank you for your visit...!!!"
       fi
-elif((accOption==2)) 
+elif((${accOption}==2)) 
 then
    echo “Enter the user name\n”
    read estusername 
    echo "Enter password\n"
    read estpassword
-    if((estusername==stusername && estpassword==stpassword))
+    if((${estusername}==${stusername} && ${estpassword}==${stpassword}))
     then
       
       
@@ -68,11 +68,11 @@ then
       echo "Finish ${TIME2}\n"
       echo "Took ${DIFFSEC} seconds.\n"
       
-      if((DIFFSEC<=0))
+      if((${DIFFSE}C<=0))
       then 
          echo "Welcome. You are on time. Thus, no restrictions\n"
          
-      elif((DIFFSEC>0 && DIFFSEC<=1800))
+      elif((${DIFFSEC}>0 && ${DIFFSEC}<=1800))
          echo "You are a little late. Thus, there will be limitation to shell access"
          # ln -s /bin/bash /bin/rbash
          # useradd ostechnix -s /bin/rbash
@@ -86,7 +86,7 @@ then
          # vi /home/ostechnix/.bash_profile
          PATH=$HOME/bin
          
-      elif((DIFFSEC>1800))
+      elif((${DIFFSEC}>1800))
          function running {
          ps -p $(lsof -i :3000 -t) &> /dev/null
          }
@@ -107,7 +107,3 @@ then
   else
   echo "Wrong entry. Try again. Thank you."
   fi
-      
-        
-        
-
