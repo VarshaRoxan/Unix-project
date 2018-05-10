@@ -1,0 +1,87 @@
+echo “Welcome\n”
+echo “Please choose an account from the following:\n”
+echo “1) Admin\n 2) Student\n”
+read accOption
+
+if((${accOption}==1))
+then
+   echo "If you have never set any password before, then enter '0123' as both username and password\n"
+   adusername=0123
+   adpassword=0123
+   echo “Enter the user name\n”
+   read eadusername 
+   echo "Enter password\n"
+   read eadpassword
+    if((${eadusername}==${adusername} && ${eadpassword}==${adpassword}))
+    then
+      echo “Welcome...!!!\n As you are the admin, you can access the computer system without any restrictions.\n”
+      echo “What would you like to do?\n 1)Reset user name or password of any account\n 2)Set or reset schedule for student\n"
+      read actOption
+      if((${actOption}==1))
+      then
+        echo "Want to change login details of: 1)Admin\n 2)Student\n"
+        read changeOption
+        if((${changeOption}==1))
+        then
+          echo "Enter the new user name\n"
+          read adusername
+          echo "Enter the new password\n"
+          read adpassword
+        elif((${actOption}==2))
+        then
+          echo "Enter the new user name\n"
+          read stusername
+          echo "Enter the new password\n"
+          read stpassword
+        else
+          echo "Invalid option entry\n"
+        fi
+      elif((${actOption}==2))
+      then
+        echo "Enter the time the students have to login in '01:30:00' format\n"
+        read TIME1
+        else
+        echo "Wrong entry. Try again. Thank you."
+       fi
+       echo "Thank you for your visit...!!!"
+      fi
+elif((${accOption}==2)) 
+then
+   echo “Enter the user name\n”
+   read estusername 
+   echo "Enter password\n"
+   read estpassword
+    if((${estusername}==${stusername} && ${estpassword}==${stpassword}))
+    then
+      
+      
+      login time(time2)
+      
+      #!/bin/bash
+      # Time Arithmetic
+      # Convert the times to seconds from the Epoch
+      SEC1=`date +%s -d ${TIME1}`
+      SEC2=`date +%s -d ${TIME2}`
+      # Use expr to do the math, let's say TIME1 was the start and TIME2 was the finish
+      DIFFSEC=`expr ${SEC2} - ${SEC1}`
+      echo "Start ${TIME1}\n"
+      echo "Finish ${TIME2}\n"
+      echo "Took ${DIFFSEC} seconds.\n"
+      
+      if((${DIFFSE}C<=0))
+      then 
+         echo "Welcome. You are on time. Thus, no restrictions\n"
+         
+      elif((${DIFFSEC}>0 && ${DIFFSEC}<=1800))
+         echo "You are a little late according to the set-schedule. Thus, there will be some restrictions in the access to the computer"
+         
+      elif((${DIFFSEC}>1800))
+         echo "You are very late according to the set-schedule. Thus, you won’t be given any access to the computer. Thank you.
+        fi
+       fi    
+  echo "Thank you for your visit...!!!"
+  fi
+  
+  else
+  echo "Wrong entry. Try again. Thank you."
+  fi
